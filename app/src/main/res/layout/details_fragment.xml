@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="viewModel" type="com.endeavour.ecobee.ui.details.DetailsViewModel"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.details.DetailsFragment">
+
+        <EditText
+            android:id="@+id/task_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_medium"
+            android:layout_marginVertical="@dimen/margin_normal"
+            android:inputType="text"
+            android:hint="Title"
+            android:text="@={viewModel.editableTitle}"/>
+
+        <EditText
+            android:id="@+id/task_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_medium"
+            android:layout_marginVertical="@dimen/margin_normal"
+            android:inputType="text"
+            android:hint="Description"
+            android:text="@={viewModel.editableDescription}"/>
+
+        <DatePicker
+            android:layout_width="match_parent"
+            android:datePickerMode="calendar"
+            android:layout_marginHorizontal="@dimen/margin_medium"
+            android:layout_marginVertical="@dimen/margin_normal"
+            android:year="@={viewModel.editableYear}"
+            android:month="@={viewModel.editableMonth}"
+            android:day="@={viewModel.editableDay}"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/task_save_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_medium"
+            android:layout_marginVertical="@dimen/margin_normal"
+            android:text="Save"/>
+
+    </LinearLayout>
+</layout>
